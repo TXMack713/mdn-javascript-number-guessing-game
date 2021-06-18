@@ -9,6 +9,7 @@ const guessField = document.querySelector('.guessField');
 
 let guessCount = 1;
 let resetButton;
+guessField.focus();
 
 function checkGuess() {
   let userGuess = Number(guessField.value);
@@ -20,10 +21,11 @@ function checkGuess() {
   if (userGuess === randomNumber) {
     lastResult.textContent = 'Congratulations! You got it right!';
     lastResult.style.backgroundColor = 'green';
-    lowOrHi.textContent = ' ';
+    lowOrHi.textContent = '';
     setGameOver();
   } else if (guessCount === 10) {
     lastResult.textContent = '!!!GAME OVER!!!';
+    lowOrHi.textContent = '';
     setGameOver();
   } else {
     lastResult.textContent = 'Wrong!';
@@ -47,7 +49,7 @@ function setGameOver() {
   guessSubmit.disabled = true;
   resetButton = document.createElement('button');
   resetButton.textContent = 'Start new game';
-  document.body.append(resetButton);
+  document.body.appendChild(resetButton);
   resetButton.addEventListener('click', resetGame);
 }
 
