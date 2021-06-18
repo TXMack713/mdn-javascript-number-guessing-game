@@ -19,13 +19,16 @@ body {
 }
 
 body {
-  width: 50%;
-  max-width: 800px;
+  width: 75%;
+  max-width: 1200px;
   min-width: 480px;
   margin: 0 auto;
   background-color: lightsteelblue;
 }
 
+header {
+  text-align: center;
+}
 .lastResult {
   color: white;
   padding: 3px;
